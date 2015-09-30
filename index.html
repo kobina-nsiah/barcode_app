@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css"> 
+		<script src="jquery/jquery-1.11.3.min.js"></script> 
+		<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script>
+  cordova.plugins.barcodeScanner.scan(
+      function (result) {
+          alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+      }, 
+      function (error) {
+          alert("Scanning failed: " + error);
+      }
+   );
+</script>
+</head>
+<body>
+<button>Scan</button>
+<label>Result here</label>
+</body>
+</html>
