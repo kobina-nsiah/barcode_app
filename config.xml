@@ -19,5 +19,6 @@
  </author>	
  
  <icon src="bar-code.png"/>
+ <gap:plugin name="com.phonegap.plugins.barcodescanner" version="2.2.0" />
  <gap:splash src="splash.png"/>
  </widget>
