@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css"> 
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css"/> 
 		<script src="jquery/jquery-1.11.3.min.js"></script> 
 		<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
 		<script src="cordova.js"></script>
 <script>
  
    
-   	function barcodeScan(){
-	cordova.plugins.barcodeScanner.scan(
-      function (result) {
-          alert("We got a barcode\n" +
+   	function barcodescan(){
+		cordova.plugins.barcodeScanner.scan(
+			function (result) {
+				alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);
 				$('#results').val(result.text);
-      }, 
-      function (error) {
-          alert("Scanning failed: " + error);
-      }
-   );	
-				
+			}, 
+			function (error) {
+				alert("Scanning failed: " + error);
+			}
+		);				
 	}
 </script>
 </head>
 <body>
-<button onclick = 'barcodeScan()'>Scan</button>
-<input type = 'text' id = 'results'>Result here</input>
+<button onclick = 'barcodescan()'>Scan</button>
+<input type = 'text' id = 'results'></input>
 </body>
 </html>
